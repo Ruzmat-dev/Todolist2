@@ -22,11 +22,15 @@
             <form id="form">
                 <div class="input-container">
                     <input type="text" placeholder="Add todo" required minlength="3" class="form-input" id="form-input">
-                <a href="#" class="iconx"><i class="bi bi-x" id="icon"></i></a>
+                <i class="bi bi-x iconx" id="icon"></i>
                 </div>
                 <button type="submit" class="form-submit"> <i class="fas fa-plus"></i> Create</button>
             </form>
             <button id="delete" class="delete">Delete All</button>
+        </div>
+        <div class="todoDolist__search">
+            <input type="text" id="search-input" placeholder="Search todos">
+            <i class="fas fa-times searchicon" id="searchicon"></i>
         </div>
         <ul id="form-ul" class="form-ul"></ul>
     </div>
@@ -45,7 +49,6 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="units.js"></script>
 </body>
 
 </html>

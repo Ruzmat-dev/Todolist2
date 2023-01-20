@@ -18,9 +18,6 @@ body {
     box-shadow: #64646f33 0px 0px 29px 0px;
     padding: 1rem;
 }
-#icon {
-    position: relative;
-}
 
 .form-container {
     width: 100%;
@@ -49,10 +46,21 @@ body {
     font-size: 18px;
     border-radius: 5px;
     border: 1px solid #cbcbcb;
-    outline: none;
     transition: all 0.5s ease-in-out;
-    position: relative;
-    border-right: none;
+    margin-right: 30px;
+    outline: none;
+}
+.iconx {
+    position: absolute;
+    margin-left: 338.5px;
+    margin-top: 10px;
+    font-size: 30px;
+    color: crimson;
+    cursor: pointer;
+}
+
+.form-input p {
+    word-break: break-all;
 }
 
 .form-input:focus {
@@ -67,6 +75,8 @@ body {
     padding: 0px 20px;
     font-size: 18px;
     border: none;
+    width: 120px;
+    height: 59px;
 }
 
 .delete {
@@ -74,7 +84,6 @@ body {
     color: #fff;
     border-radius: 5px;
     padding: 16px 20px;
-    margin-top: 30px;
     font-size: 18px;
     border: none;
 }
@@ -83,6 +92,27 @@ body {
     transform: scale(1.1);
 }
 
+.todoDolist__search {
+    width: 100%;
+    box-shadow: #64646f33 0px 0px 29px 0px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+.todoDolist__search input {
+    height: 55px;
+    flex: 1;
+    font-size: 18px;
+    border: none;
+    margin-right: 10px;
+    outline: none;
+}
+.todoDolist__search i {
+    color: crimson;
+    cursor: pointer;
+}
 .form-submit:active {
     transform: scale(1.1);
 }
@@ -125,13 +155,6 @@ body {
     }
   }
 
-.iconx {
-    position: absolute;
-    margin-left: 340px;
-    margin-top: 10px;
-    font-size: 30px;
-    color: crimson;
-}
 
 .wrapper {
     position: fixed;

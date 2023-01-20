@@ -5,7 +5,8 @@ const form = document.querySelector("#form"),
     icon = document.querySelector("#icon"),
     modal = document.querySelector("#wrapper"),
     yes = document.querySelector("#yes"),
-    no = document.querySelector("#no");
+    no = document.querySelector("#no"),
+    searchInput = document.querySelector("#search-input")
 form.addEventListener("submit", addTodo)
 function addTodo(e) {
     e.preventDefault()
@@ -44,7 +45,6 @@ delet.addEventListener('click', () => {
 })
 
 ul.addEventListener("click", (e) => {
-    console.log(1);
     if (e.target.classList.contains("btn-delete")) {
         const isAgreedToDelete = confirm("Are you sure to delete this item?");
         if (isAgreedToDelete) {
@@ -69,11 +69,15 @@ ul.addEventListener("click", (e) => {
     }
     else if (e.target.classList.contains("btn-time")){
        let newTimerPmAm = new Date ; 
-        if(newTimerPmAm.getHours() > 12) {
-          console.log(e.target);
-          e.target.innerHTML = `${newTimerPmAm.getHours()-12}:${newTimerPmAm.getMinutes()}:${newTimerPmAm.getSeconds()} PM`
+       let timer = new Date;
+        if(`${timer.getHours().toString().padStart(2, "0")} : ${timer.getMinutes().toString().padStart(2, "0")} : ${timer.getSeconds().toString().padStart(2, "0")}`){
+            e.target.innerHTML = `${newTimerPmAm.getHours()-12}:${newTimerPmAm.getMinutes()}:${newTimerPmAm.getSeconds()} PM`
+            console.log(1);
         }
-        
+        if(e.target.innerHTML = `${newTimerPmAm.getHours()-12}:${newTimerPmAm.getMinutes()}:${newTimerPmAm.getSeconds()} PM`) {
+             `${timer.getHours().toString().padStart(2, "0")} : ${timer.getMinutes().toString().padStart(2, "0")} : ${timer.getSeconds().toString().padStart(2, "0")}`
+            console.log(2);
+        }
     }
 }
 )
@@ -89,4 +93,18 @@ no.addEventListener("click", () => {
 icon.addEventListener("click", () => {
     input.value = ''
 })
+document.querySelector("#searchicon").addEventListener('click', ()=> {
+    searchInput.value = ''
+});
 
+searchInput.addEventListener("keyup" , () => {
+    let searchWord = searchInput.value.toLowerCase();
+    const allTodos = document.querySelectorAll(".item");
+    allTodos.forEach(todo => {
+        if(todo.firstChild.textContent.toLowerCase().indexOf(searchWord) !== -1){
+            todo.style.display = "block";
+        }else {
+            todo.style.display = "none";
+        }
+    })
+})
